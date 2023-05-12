@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Quiz Result: {{ quiz.title }}</h1>
+  {% if score %}
+    <p>Your score: {{ score.score }}</p>
+  {% else %}
+    <p>No score available.</p>
+  {% endif %}
+{% endblock %}
