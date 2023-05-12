@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Leaderboard: {{ quiz.title }}</h1>
+  {% if scores %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Score</th>
+                    
+        </tr>
+      </thead>
+      <tbody>
+        {% for score in scores %}
+          <tr>
+            <td>{{ score.user.username }}</td>
+            <td>{{ score.score }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="2">No scores available.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No scores available.</p>
+  {% endif %}
+{% endblock %}
+
